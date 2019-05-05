@@ -1,0 +1,55 @@
+a{
+    font-size: 25px;
+    text-decoration: none;
+}
+
+/* anchor tag start with "https" */
+a[href^="https://"]{
+    color:red;
+}
+/* anchor tag end with ".pdf" */
+a[href$=".pdf"]{
+    color: green;
+}
+/* any tag where title contains "example" */
+[title*="example"]{
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0px;
+}
+/* any tag where title is exactly "This is Sparta" */
+[title="This is Sparta"]{
+    font-style: italic;
+    padding: 0px;
+}
+/* The first <h3> following directly any <h1> */
+h1 + h3{
+    background: pink;
+}
+/* Any <h4> siblings of <h1>, but only for <h4> after the <h1> < */
+h1 ~ h4{
+    text-align: right;
+    padding: 10px;
+}
+/* Match enable elements */
+form :enabled{
+    border:none;
+    padding: 10px;
+    width: calc(50% - 20px);
+    background-color: #FFF;
+}
+/* Match disable elements */
+form :disabled{
+    border:none;
+    padding: 10px;
+    width: calc(50% - 20px);
+    background-color: blueviolet;
+}
+/* :not() : will match any <h4> that does not have a .foo class */
+h4:not(.foo){
+    text-align: left;
+}
+/* Matches any <form> element that has no children */
+form:empty{
+    background-color: chocolate;
+}

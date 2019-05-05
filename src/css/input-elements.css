@@ -1,0 +1,12 @@
+button{
+    border: 2px solid rgb(169, 236, 105);
+    background-color: rgb(169, 236, 105);;
+    padding: 25px;
+    font: inherit;
+    font-size: 30px;
+    cursor: pointer;
+    outline: none;
+}
+button:hover {
+    background-color: transparent;
+}

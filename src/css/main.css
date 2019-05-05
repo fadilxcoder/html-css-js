@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Cute+Font');
+body {
+    font-family: 'Cute Font', Arial, sans-serif !important;
+    text-align: center;
+    margin: 0px;
+    background: #31a9a3;
+}
+main{
+    width: 960px;
+    margin: 0 auto;
+    background: #64cac0;
+}
+h1{
+    font-size: 120px;
+    margin: 0px;
+    padding: 20px;
+}
+p{
+    padding: 20px;
+    margin: 0 auto;
+    font-size: 30px;
+}
+ul{
+    padding: 0px;
+    list-style: none;
+    width: 500px;
+    margin: 30px auto;
+}
+form{
+    padding: 25px 0px;
+    height: fit-content;
+    background-color: beige;
+}
