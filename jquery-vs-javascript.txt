@@ -1,0 +1,128 @@
+>> Select HTML elements <<
+
+// JQuery 
+const element = $(".someClass");
+
+// Native
+const element = document.uerySelector(".someClass");
+
+-----------------------------------------------------------------------------------
+
+>> Add class <<
+
+// JQuery 
+$(element).addClass(className);
+
+// Native
+element.classList.add("someClass");
+
+-----------------------------------------------------------------------------------
+
+>> Inject HTML string <<
+
+// JQuery
+$(element).after(htmlString);
+
+// Native
+element.insertAdjacentHTML('afterend', htmlString);
+
+-----------------------------------------------------------------------------------
+
+>> Append HTML Element <<
+
+// JQuery
+$(element).append(child);
+
+// Native
+element.appenChild(child);
+
+-----------------------------------------------------------------------------------
+
+>> Get Attributes <<
+
+// JQuery
+$(element).attr('tabindex');
+
+// Native
+element.getAttribute('tabindex');
+
+-----------------------------------------------------------------------------------
+
+>> Get HTML <<
+
+// JQuery
+$(element).html();
+
+// Native
+element.innerHTML;
+
+-----------------------------------------------------------------------------------
+
+>> Request GET data (AJAX) <<
+
+// JQuery
+$.getJSON('/my/url', function(data){
+
+});
+
+// Native
+fetch('/my/url').then(function(response){
+	return response.json();
+});
+
+-----------------------------------------------------------------------------------
+
+>> Request POST data (AJAX) <<
+
+// JQuery
+$.ajax({ 
+	type	: 'POST',
+	url		: '/my/url',
+	data	: data
+});
+
+// Native
+fetch('/my/url', {
+	method	: 'POST',
+	body	: JSON.stringify(data)
+});
+
+-----------------------------------------------------------------------------------
+
+>> Show Element <<
+
+// JQuery
+$(element).show();
+
+// Native
+element.style.display = 'block';
+
+-----------------------------------------------------------------------------------
+
+>> Hide Element <<
+
+// JQuery
+$(element).hide();
+
+// Native
+element.style.display = 'none';
+
+-----------------------------------------------------------------------------------
+
+>> Bind events <<
+
+// JQuery
+$(element).on( 'click', eventHandler);
+
+// Native
+element.addEventListener('click', eventHandler);
+
+-----------------------------------------------------------------------------------
+
+>> Parse JSON <<
+
+// JQuery
+$.parseJSON(string);
+
+// Native
+JSON.parse(string);
