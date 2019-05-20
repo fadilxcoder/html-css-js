@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>Notification HTML/JS</title>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+		<style>
+			html, body{font-family: 'Raleway', sans-serif; margin: 0 auto; height: 100%; display: flex; justify-content: center; flex-direction: column; text-align: center; background: cyan; }
+			h1{ 
+				background-image: url(https://source.unsplash.com/random/1000x750) ;
+				background-attachment: fixed;
+				color: transparent;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				-webkit-background-clip: text;
+				font-size: 175px;
+				margin: 0px;
+			}
+			button{
+				border: none;
+				background: white;
+				border-radius: 0px;
+				color: #000;
+				padding: 20px 0px;
+				font-size:25px;
+				font-weight:bold;
+				cursor:pointer;
+			}
+		</style>
+	</head>
+	<body onload="notifyMe()">
+		<!-- https://developer.mozilla.org/en-US/docs/Web/API/notification -->
+		<h1>fadilxcoder</h1>
+		<button onclick="notifyMe()">Notify Me</button>
+		
+		<script>
+			function notifyMe() 
+			{
+				//console.log(window.Notification.permission);
+				if (!window.Notification) {
+					console.log('Browser does not support notifications.');
+				} else {
+					switch(Notification.permission) {
+						case 'granted':
+							// show notification here
+							notification();
+							break;
+						case 'default':
+							// request permission from user
+							Notification.requestPermission().then(function (permission) 
+							{
+								if (permission === 'granted') {
+									// show notification here
+									notification();
+								} else {
+									console.log('User blocked notifications.');
+								}
+							});
+							break;
+						case 'denied':
+							console.log('User blocked notifications.');
+							break;
+						default:
+							console.log('State : '+ Notification.permission);
+					}
+				}
+			}
+			
+			function notification()
+			{
+				var notify = new Notification('Notification Alert', {
+					body: 'This is a test for notification, Click to see the magic..',
+					icon: 'https://img.icons8.com/metro/420/online.png',
+					image: 'https://source.unsplash.com/random/1000x750',
+					vibrate: [200, 100, 200],
+				});
+				notify.onclick = function(event) {
+				  event.preventDefault(); // prevent the browser from focusing the Notification's tab
+				  window.open('https://www.facebook.com/fadil.xcoder', '_blank');
+				}
+			}
+		</script>
+	</body>
+</html>
