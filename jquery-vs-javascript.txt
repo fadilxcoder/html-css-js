@@ -4,7 +4,7 @@
 const element = $(".someClass");
 
 // Native
-const element = document.uerySelector(".someClass");
+const element = document.querySelector(".someClass");
 
 -----------------------------------------------------------------------------------
 
