@@ -1,0 +1,21 @@
+<script type="text/javascript">
+
+	// Targeting an element's child while there are multiple DIV that has same classname.
+
+	$(document).ready( function() {
+		$(".page-collapse").on("click", function(){
+			var $target = $(this).children('.page-collapse-header').children('a').attr('href');
+
+			if( $(this).children($target).hasClass('show') == false){
+				$('html,body').animate({scrollTop: $($target).offset().top}, 'slow');
+			}
+
+		});
+	});
+	
+	
+	// Targeting an element's parent other child and changing CSS
+	
+	$inputName.parent('.form-group').children('.footer-form-errors').css('visibility', 'visible');
+	
+</script>
